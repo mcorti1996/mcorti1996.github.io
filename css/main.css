@@ -457,7 +457,6 @@ body {
 }
 
 /*PROJECTS*/
-
 .projects-title {
   text-align: center;
   font-size: 2rem;
@@ -535,7 +534,7 @@ body {
   overflow-x: hidden;
 }
 
-/*MOBILE*/
+/*HERO MOBILE*/
 @media screen and (max-width: 767px) {
 
   .hero {
@@ -1003,6 +1002,10 @@ body {
     margin-left: 0;
     padding: 0 1rem;
     text-align: center;
+  }
+
+  .projects-carousel {
+    gap: 1.2rem;
   }
 
 }
