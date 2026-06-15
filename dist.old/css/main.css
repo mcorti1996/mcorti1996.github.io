@@ -926,7 +926,7 @@ body {
   font-size: 3rem;
 }
 
-/*LINGUE MOBILE*/
+/*LINGUE MOBILE*/ 
 @media screen and (max-width: 767px) {
 
   .language-switch {
