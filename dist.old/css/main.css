@@ -1005,4 +1005,8 @@ body {
     text-align: center;
   }
 
+  .projects-carousel {
+    gap: 1.2rem;
+  }
+
 }
