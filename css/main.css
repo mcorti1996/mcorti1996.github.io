@@ -926,6 +926,15 @@ body {
   font-size: 3rem;
 }
 
+@media screen and (max-width: 767px) {
+
+  .footer__social img {
+    width: 40px;
+    height: 40px;
+  }
+
+}
+
 /*LINGUE MOBILE*/
 @media screen and (max-width: 767px) {
 
