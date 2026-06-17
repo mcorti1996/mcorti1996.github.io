@@ -24,6 +24,8 @@
       width: 60px;
       height: 60px;
       object-fit: contain;
+      @include transition-ease;
+      
     }
   }
 
@@ -34,14 +36,6 @@
       font-size: 3rem;
     }
   }
-}
-
-.footer__social img {
-  @include transition-ease;
-}
-
-@include media-md {
-  // eventuali regole desktop future
 }
 
 @media screen and (max-width: 767px) {

@@ -729,6 +729,13 @@ body {
   text-align: center;
 }
 
+.cv-hero .btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+}
+
 .cv-hero__image {
   width: 180px;
   height: 180px;
@@ -904,6 +911,14 @@ body {
   font-weight: 300;
   color: #666;
   margin-bottom: 0;
+}
+
+@media screen and (max-width: 767px) {
+
+  .contact-page p{
+    padding: 0 1.5rem;
+}
+
 }
 
 /*FOOTER*/
