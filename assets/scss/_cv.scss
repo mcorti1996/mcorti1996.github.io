@@ -1,0 +1,63 @@
+.cv-hero {
+  min-height: 520px;
+  background: #fff;
+  padding-top: 120px;
+  text-align: center;
+
+  &__image {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1.5rem;
+  }
+
+  h1 {
+    font-size: 2rem;
+    font-weight: 700;
+  }
+
+  p {
+    font-size: 1.4rem;
+    margin-bottom: 2.5rem;
+  }
+}
+
+.cv-content {
+  background: $primary-color;
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 4rem;
+  padding: 4rem 8rem;
+  min-height: 100vh;
+}
+
+.cv-column {
+  &--right {
+    border-left: 3px solid #fff;
+    padding-left: 4rem;
+  }
+}
+
+.cv-block {
+  margin-bottom: 2.5rem;
+
+  h2 {
+    font-size: 1.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+  }
+
+  h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-top: 1.4rem;
+    margin-bottom: 0.3rem;
+  }
+
+  p {
+    font-size: 1.1rem;
+    line-height: 1.35;
+  }
+}
