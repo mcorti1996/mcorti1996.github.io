@@ -1,36 +1,55 @@
-$primary-color: #272727;
-$secondary-color: #ff652f;
+/*COLORS*/
+$primary-color: #C1A3D4;
+$secondary-color: #8EAE63;
+$text-color: #000;
+$white: #fff;
+$footer-color: #121212;
 
+/*TYPOGRAPHY*/
+$font-main: 'Outfit', sans-serif;
+
+/*RESET*/
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
+/*MIXINS*/
 @mixin transition-ease {
-    transition: all 0.5s ease-in-out;
+  transition: all 0.3s ease;
 }
 
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/*FUNCTION*/
 @function set-text-color($color) {
-    @if (lightness($color) > 40%) {
-        @return #000;
-    } @else {
-        @return #fff;
-    }
+  @if (lightness($color) > 40%) {
+    @return #000;
+  } @else {
+    @return #fff;
+  }
 }
 
+/*BREAKPOINTS*/
 @mixin media-md {
-    @media screen and (min-width: 768px) {
-        @content; 
-    }
+  @media screen and (min-width: 768px) {
+    @content;
+  }
 }
+
 @mixin media-lg {
-    @media screen and (min-width: 1024px) {
-        @content; 
-    }
+  @media screen and (min-width: 1024px) {
+    @content;
+  }
 }
+
 @mixin media-xl {
-    @media screen and (min-width: 1600px) {
-        @content; 
-    }
+  @media screen and (min-width: 1600px) {
+    @content;
+  }
 }

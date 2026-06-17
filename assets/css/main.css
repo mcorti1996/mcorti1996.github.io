@@ -6,8 +6,17 @@
 
 body {
   font-family: 'Outfit', sans-serif;
-  background-color: #C1A3D4;
   color: #000;
+  background-color: #121212;
+}
+
+.hero,
+.about-page,
+.projects-page,
+.cv-hero,
+.cv-content,
+.contact-page {
+  background-color: #fff;
 }
 
 /* HEADER */
@@ -944,6 +953,7 @@ body {
     align-items: center;
     gap: 0.5rem;
     text-align: center;
+    background: #121212;
   }
 
   .footer__social img {
@@ -966,7 +976,6 @@ body {
   .footer__copyright {
     order: 3;
   }
-
 }
 
 /*LINGUE MOBILE*/

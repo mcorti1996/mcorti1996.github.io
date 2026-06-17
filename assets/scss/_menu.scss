@@ -1,121 +1,225 @@
-.menu-btn {
-    position: absolute;
-    z-index: 1;
-    right: 1rem;
-    top: 1rem;
-    height: 20px;
-    width: 28px;
-    cursor: pointer;
-    @include transition-ease;
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 80px;
+  background-color: $primary-color;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 3rem;
+  z-index: 10;
+}
 
-    &__burger {
-        position: absolute
-    ;
-    right: 0;
-    top: 0.5rem;
+.logo {
+  font-weight: 700;
+  font-size: 3rem;
+  color: $white;
+}
+
+.menu-btn {
+  position: absolute;
+  z-index: 20;
+  right: 1.5rem;
+  top: 0;
+  height: 80px;
+  width: 40px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &__burger {
+    position: relative;
     width: 28px;
     height: 3px;
-    background: set-text-color($primary-color);
+    background: $white;
+    border-radius: 3px;
     @include transition-ease;
 
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      width: 28px;
+      height: 3px;
+      background: $white;
+      border-radius: 3px;
+      @include transition-ease;
+    }
+
     &::before {
-        content: '';
-        position: absolute;
-        top: -8px;
-        width: 28px;
-        height: 3px;
-        background: set-text-color($primary-color);
-        @include transition-ease;
+      top: -8px;
     }
 
     &::after {
-        content: '';
-        position: absolute;
-        top: 8px;
-        width: 20px;
-        height: 3px;
-        background: set-text-color($primary-color);
-        @include transition-ease;
+      top: 8px;
+      width: 20px;
     }
 
     &.open {
-        transform: rotate(720deg);
-        background: transparent;
+      background: transparent;
 
-        &::before {
-            transform: rotate(45deg) translate(5px, 8px);
-        }
+      &::before {
+        transform: rotate(45deg) translate(5px, 8px);
+      }
 
-        &::after {
-            width: 28px;
-            transform: rotate(-45deg) translate(3px, -7px);
-        }
+      &::after {
+        width: 28px;
+        transform: rotate(-45deg) translate(3px, -7px);
+      }
     }
-
-    }
+  }
 }
 
 .nav {
-    position: fixed;
-    top: 0;
-    left:0;
-    width: 100vw;
-    opacity: 0.98;
-    visibility: hidden;
+  position: fixed;
+  inset: 0;
+  visibility: hidden;
+
+  &.open {
+    visibility: visible;
+  }
+
+  .menu-nav {
+    height: 100vh;
+    background: $primary-color;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transform: translateY(-100%);
+    @include transition-ease;
 
     &.open {
-        visibility: visible;
+      transform: translateY(0);
     }
 
-    .menu-nav {
-        display: flex;
-        flex-flow: column wrap;
-        align-items: center;
-        justify-content: center;
-        height: 100vh;
-        overflow: hidden;
-        background: $primary-color;
-        list-style-type: none;
-        padding-right: 1rem;
-        transform: translateY(-100%);
-        @include transition-ease;
+    &__item {
+      transform: translateX(100vw);
+      @include transition-ease;
 
-        &.open {
-            transform: translateY(0);
-        }
-
-        &__item {
-            transform: translateX(100vw);
-            @include transition-ease;
-
-            &.open {
-                transform: translateX(0);
-            }
-
-            &.active > a {
-                color: $secondary-color;
-            }
-        }
-
-        &__link {
-            display:inline-block;
-            font-size: 2rem;
-            text-transform: uppercase;
-            padding: 2rem 0;
-            font-weight: 300;
-            @include transition-ease;
-
-            &:hover {
-                color: $secondary-color;
-            }
-
-        }
-
+      &.open {
+        transform: translateX(0);
+      }
     }
+
+    &__link {
+      display: inline-block;
+      padding: 1.4rem 0;
+      font-size: 2rem;
+      color: $white;
+      text-decoration: none;
+      text-transform: lowercase;
+      position: relative;
+      @include transition-ease;
+
+      &:hover {
+        color: $text-color;
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -2px;
+        width: 0;
+        height: 2px;
+        background: $text-color;
+        transition: width 0.3s ease;
+      }
+
+      &:hover::after {
+        width: 100%;
+      }
+
+      &.active-link {
+        color: $text-color;
+
+        &::after {
+          width: 100%;
+        }
+      }
+    }
+  }
 }
 
-@for $i from 1 through 4 {
-    .menu-nav__item:nth-child(#{$i}) {
-        transition-delay: ($i * 0.1s) + 0.15s;
+.language-switch {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-left: 2rem;
+  flex-shrink: 0;
+
+  .img-globe {
+    width: 20px;
+  }
+
+  a,
+  span {
+    color: $white;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+  }
+
+  a:hover,
+  .active-lang {
+    color: $text-color;
+  }
+}
+
+/*DESKTOP MENU*/
+@include media-md {
+  .menu-btn {
+    display: none;
+  }
+
+  .nav {
+    position: static;
+    visibility: visible;
+
+    .menu-nav {
+      height: auto;
+      background: transparent;
+      flex-direction: row;
+      transform: translateY(0);
+
+      &__item {
+        transform: translateX(0);
+      }
+
+      &__link {
+        font-size: 0.95rem;
+        padding: 0;
+        margin-left: 2rem;
+      }
     }
+  }
+}
+
+/*MOBILE LANGUAGE*/
+@media screen and (max-width: 767px) {
+  .language-switch {
+    position: absolute;
+    right: 4.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .menu-nav {
+    &__item {
+      margin: 0.9rem 0;
+    }
+
+    &__link {
+      padding: 0.2rem 0;
+    }
+  }
+
+  .nav .menu-nav__link::after {
+    bottom: -3px;
+  }
 }
