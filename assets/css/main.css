@@ -352,6 +352,11 @@ body {
   text-decoration: none;
   font-weight: 500;
   transition: all 0.3s ease;
+  height: auto;
+  min-height: 44px;
+  line-height: 1.2;
+  white-space: normal;
+  width: auto;
 }
 
 .btn:hover {
@@ -359,11 +364,6 @@ body {
   box-shadow: 0 10px 20px rgba(0,0,0,.12);
 }
 
-.btn:active,
-.contact-form button:active {
-  background-color: #b08bc8;
-  transform: scale(0.97);
-}
 
 .btn.primary {
   background-color: #C1A3D4;
@@ -373,11 +373,35 @@ body {
   font-size: 1rem;
 }
 
-.btn.outline {
-  border: 1.5px solid #000;
-  color: #000;
+.btn.btn.primary:active,
+.contact-form button:active {
+  background-color: #b08bc8;
+  transform: scale(0.97);
 }
 
+.btn.secondary {
+  background-color: #8EAE63;
+  color: #000;
+  height: auto;
+}
+
+.btn.secondary:active, 
+.btn.secondary:focus {
+  background-color: #68932f;
+  transform: scale(0.97);
+}
+
+
+@media screen and (max-width: 767px) {
+  .btn {
+    height:auto;
+  }
+
+  .btn.primary {
+    height:auto;
+  }
+  
+}
 
 /* IMMAGINI */
 .hero__image {
@@ -408,7 +432,7 @@ body {
 }
 
 .bubble--3 {
-  top: 150px;
+  top: 130px;
   left: 42%;
 }
 
@@ -457,7 +481,6 @@ body {
 }
 
 /*PROJECTS*/
-
 .projects-title {
   text-align: center;
   font-size: 2rem;
@@ -535,7 +558,7 @@ body {
   overflow-x: hidden;
 }
 
-/*MOBILE*/
+/*HERO MOBILE*/
 @media screen and (max-width: 767px) {
 
   .hero {
@@ -876,7 +899,7 @@ body {
 
 /*FOOTER*/
 .footer {
-  background: #444444;
+  background: #121212;
   color: #fff;
   display: flex;
   justify-content: space-between;
@@ -981,6 +1004,9 @@ body {
     padding: 0.6rem 1.5rem;
     font-size: 0.9rem;
     text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 }
 
