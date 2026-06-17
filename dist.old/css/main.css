@@ -876,7 +876,7 @@ body {
 
 /*FOOTER*/
 .footer {
-  background: #000;
+  background: #444444;
   color: #fff;
   display: flex;
   justify-content: space-between;
