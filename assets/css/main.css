@@ -950,16 +950,6 @@ body {
   width: 60px;
   height: 60px;
   object-fit: contain;
-  transition: transform 0.3s ease;
-}
-
-.logo-footer {
-  color: #C1A3D4;
-  font-weight: 700;
-  font-size: 3rem;
-}
-
-.footer__social img {
   filter: brightness(0) invert(1);
   transition: 0.3s ease;
 }
@@ -967,6 +957,12 @@ body {
 .footer__social img:hover {
   transform: scale(1.1);
   opacity: 0.8;
+}
+
+.logo-footer {
+  color: #C1A3D4;
+  font-weight: 700;
+  font-size: 3rem;
 }
 
 /*FOOTER MOBILE*/
